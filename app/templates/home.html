@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <title>Todo App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <div class="logo">
+        <!-- <marquee behavior="scroll" direction="right" loop="infinite" scrollamount="15" onmouseover="this.stop()" onmouseout="this.start()">
+            <h1>Task Management</h1>
+        </marquee> -->
+        <h1>Task Management</h1>
+    </div>
+        
+    {% include 'navbar.html' %}
+        
+        {% block content %}
+           <div class="tasks">
+            <h1>Tasks</h1>
+            <table>
+                <tr>
+                    <th>Task</th>
+                    <th>Description</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                    
+                </tr>
+                {% for i in read %}
+                    <tr>
+                        <td>{{i.title}}</td>
+                        <td>{{i.desc}}</td>
+                        <td><a href="{% url 'update' i.id%}">Update</a></td>
+                        <td><a href="{% url 'delete' i.id %}">Delete</a></td>
+                        <td><select id="checking" name="checking">
+                            <option value="Completed">Completed</option>
+                            <option value="Undergoing">Undergoing</option>     
+                        </select></td>
+                    </tr>
+                {% endfor %}
+            </table>
+           </div>
+        
+            
+        {% endblock content %}
+    <hr>
+    <footer>Designed by Vinay Kumar</footer>
+
+    
+    
+        
+
+    <!-- <script src="" async defer></script> -->
+    
+</body>
+</html>

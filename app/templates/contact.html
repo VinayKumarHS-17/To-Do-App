@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+
+
+{% block content %}
+
+<h3>Contact Us</h3>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{data.as_p}}
+    <button>Submit</button>
+</form>
+
+{% endblock content %}
+    

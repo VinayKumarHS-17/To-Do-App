@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    
+    
+    <div class="his">
+        <h1>History</h1>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Description</th>
+            <th>Restore</th>
+            <th>Delete</th>
+        </tr>
+        {% for i in hist %}
+        <tr>
+            <td><h3>{{i.title}}</h3></td>
+            <td><h4>{{i.desc}}</h4></td>
+            <td><a href="{% url 'restore' i.id %}">Restore</a></td>
+            <td><a href="{% url 'dele_restore' i.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <br>
+    <a href="{% url 'restore_all' %}" >Restore All</a>
+    <a href="{% url 'dele_all' %}" >Delete All</a>
+    
+
+    <a href="{% url 'home' %}" class="back">Back</a>
+
+    </div>
+    
+
+    
+        
+</body>
+</html>

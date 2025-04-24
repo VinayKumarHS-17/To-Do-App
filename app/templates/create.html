@@ -1,0 +1,35 @@
+{% extends 'home.html' %}
+
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <title>ToDo App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    
+</head>
+<body>
+   
+    <form action="" method="POST" class="form1">
+        {% csrf_token %}
+        <label>Title</label>
+        <input type="text" name="title" id="title" placeholder="Title" value="{{updating.title}}"> <br>
+
+        <label>Description</label>
+        <input type="text" name="desc" id="desc" placeholder="Description" value="{{updating.desc}}"> <br>
+
+        <button>Submit</button>
+    </form> 
+       
+    <!-- <script src="" async defer></script> -->
+</body>
+</html>
+
+{% endblock content %}
+    

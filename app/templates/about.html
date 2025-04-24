@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <h1 style="text-align: center;">About</h1>
+    
+        <div class="ab-para">
+            <p>Welcome to Todo App, a simple and intuitive to-do list app designed to help you stay organized, focused, and on top of your tasks. Whether you’re managing work projects, personal goals, or everyday tasks, our app is here to make your life easier.</p>
+        </div>
+    
+
+        <div class="ab-mission">
+            <p>Our goal is to help you increase productivity and reduce stress by providing an easy-to-use platform for managing your daily tasks. With Todo App, you’ll never miss an important deadline again.</p>
+        </div>
+    
+    <a href="{% url 'home' %}" class="back">Back</a>
+    
+    
+
+</body>
+</html>
